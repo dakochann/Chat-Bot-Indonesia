@@ -24,9 +24,9 @@ print("KETIK TOMBOL 'enter' UNTUK KELUAR")
 
 while kondisi:
     pesan = input("Masukkan Pesan Anda : ")
-    if pesan == "off":
+    if pesan == "":
         print("BYEEEE!!!!")
-        kondisi = False
+        break
     url = requests.get(f'https://simsumi.herokuapp.com/api?text={pesan}&lang=id')
     d = json.loads(url.content)
     if d['success'] == 'Limit 50 queries per hour.':
